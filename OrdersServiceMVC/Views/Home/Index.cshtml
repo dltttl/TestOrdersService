@@ -1,0 +1,17 @@
+﻿@model IEnumerable<OrdersServiceDAL.Models.Order>
+@{
+    ViewBag.Title = "Все заказы";
+}
+<a asp-action="Create">Добавить заказ</a>
+<a asp-action="Clear">Очистить список заказов</a>
+<table class="table">
+    <tr><td>Id</td><td>Город отправителя</td><td>Адрес отправителя</td><td>Город получателя</td>
+        <td>Адрес получателя</td><td>Вес груза</td><td>Дата забора груза</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Id</td>
+            <td>@item.SenderTown</td><td>@item.SenderAddress</td>
+            <td>@item.DestinationTown</td><td>@item.DestinationAddress</td>
+            <td>@item.LoadWeightInKilos</td><td>@item.ShippingTime</td></tr>
+    }
+</table>

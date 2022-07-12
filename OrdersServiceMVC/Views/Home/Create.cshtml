@@ -1,0 +1,33 @@
+﻿@model OrdersServiceDAL.Models.Order
+@{
+    ViewBag.Title = "Добавление пользователя";
+}
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="SenderTown" class="control-label">Город отправителя</label>
+        <input type="text" asp-for="SenderTown" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SenderAddress" class="control-label">Адрес отправителя</label>
+        <input type="text" asp-for="SenderAddress" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DestinationTown" class="control-label">Город получателя</label>
+        <input type="text" asp-for="DestinationTown" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DestinationAddress" class="control-label">Адрес получателя</label>
+        <input type="text" asp-for="DestinationAddress" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LoadWeightInKilos" class="control-label">Вес груза</label>
+        <input type="number" step="0.01" min="0.01" asp-for="LoadWeightInKilos" class="form-control" />
+    </div>
+    <div class="form-group">
+            <label asp-for="ShippingTime" class="control-label">Дата забора груза</label>
+            <input type="date" asp-for="ShippingTime" class="form-control" />
+        </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить данные о заказе" class="btn btn-default" />
+    </div>
+</form>
